@@ -1,9 +1,0 @@
-/* ============================================================
-   Aviation Family Sri Lanka — main.css
-   Shared import file loaded on every page.
-   Each page additionally loads its own /pages/[page].css
-   ============================================================ */
-
-@import url('base.css');
-@import url('components.css');
-@import url('layout.css');
