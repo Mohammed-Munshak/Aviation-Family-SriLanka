@@ -811,13 +811,13 @@ $wa_members    = isset($settings['wa_members'])    ? number_format((int)$setting
                 <p class="section-label">What's Happening</p>
                 <h2 class="section-title">Latest News</h2>
             </div>
-            <a href="news.php" class="section-link">All Articles &rarr;</a>
+            <a href="news.php" class="section-link">All News &rarr;</a>
         </div>
 
         <div class="news-grid">
             <?php if ($latest_news->num_rows > 0):
                 while ($article = $latest_news->fetch_assoc()): ?>
-                <a href="article.php?id=<?php echo $article['id']; ?>" class="news-card reveal">
+                <a href="news.php?id=<?php echo $article['id']; ?>" class="news-card reveal">
                     <div class="news-card-img">
                         <?php if (!empty($article['image_url'])): ?>
                             <img src="<?php echo htmlspecialchars($article['image_url']); ?>"
