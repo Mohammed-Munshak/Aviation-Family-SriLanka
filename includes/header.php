@@ -177,13 +177,14 @@ if (session_status() === PHP_SESSION_NONE) {
 
             <?php if (isset($_SESSION['user_id'])): ?>
 
-                <?php if (isset($_SESSION['role']) && $_SESSION['role'] === 'admin'): ?>
-                    <!-- Admin: show Dashboard only (no Profile) -->
-                    <a href="admin/dashboard.php" class="btn-nav btn-dashboard">DASHBOARD</a>
-                <?php else: ?>
-                    <!-- Regular user: show Profile only (no Dashboard) -->
-                    <a href="profile.php" class="btn-nav btn-profile">PROFILE</a>
-                <?php endif; ?>
+                <<?php if (isset($_SESSION['role']) && $_SESSION['role'] === 'admin'): ?>
+    <!-- Admin: show both Profile and Dashboard -->
+    <a href="profile.php" class="btn-nav btn-profile">PROFILE</a>
+    <a href="admin/dashboard.php" class="btn-nav btn-dashboard">DASHBOARD</a>
+<?php else: ?>
+    <!-- Regular user: show Profile only -->
+    <a href="profile.php" class="btn-nav btn-profile">PROFILE</a>
+<?php endif; ?>
 
                 <a href="logout.php" class="btn-nav btn-logout">LOGOUT</a>
 
